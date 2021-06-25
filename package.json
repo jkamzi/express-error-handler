@@ -1,0 +1,42 @@
+{
+  "name": "@jkamzi/express-errorhandler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "jest && tsc -p ./tsconfig.json",
+    "prebuild": "rimraf dist/",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.12",
+    "@types/faker": "^5.5.6",
+    "@types/jest": "^26.0.23",
+    "@types/node": "^15.12.4",
+    "@typescript-eslint/eslint-plugin": "^4.28.0",
+    "@typescript-eslint/parser": "^4.28.0",
+    "eslint": "^7.29.0",
+    "eslint-config-airbnb-typescript": "^12.3.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jest": "^24.3.6",
+    "faker": "^5.5.3",
+    "jest": "^27.0.5",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^27.0.3"
+  },
+  "peerDependencies": {
+    "express": "^4.17.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jkamzi/express-errorhandler.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jkamzi/express-errorhandler/issues"
+  },
+  "homepage": "https://github.com/jkamzi/express-errorhandler#readme"
+}
