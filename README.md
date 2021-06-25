@@ -52,4 +52,4 @@ curl http://localhost:8000/error
 }
 ```
 
-Checkout `src/errors/index.ts` to see what pre-defined errors are available
+Checkout [src/errors/index.ts](src/errors/index.ts) to see what pre-defined errors are available
