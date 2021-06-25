@@ -1,5 +1,5 @@
 {
-  "name": "@jkamzi/express-errorhandler",
+  "name": "@jkamzi/express-error-handler",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
@@ -30,13 +30,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jkamzi/express-errorhandler.git"
+    "url": "git+https://github.com/jkamzi/express-error-handler.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jkamzi/express-errorhandler/issues"
+    "url": "https://github.com/jkamzi/express-error-handler/issues"
   },
-  "homepage": "https://github.com/jkamzi/express-errorhandler#readme"
+  "homepage": "https://github.com/jkamzi/express-error-handler#readme"
 }
