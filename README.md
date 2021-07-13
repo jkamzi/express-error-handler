@@ -13,6 +13,7 @@ export type HandleErrorsOptions = {
   transformUnknownErrors: boolean;
 };
 ```
+
 ```ts
 import express, { Request, Response } from 'express';
 const app = express();
@@ -24,19 +25,16 @@ app.get('/error', (req: Request, res: Response) => {
 const options: HandleErrorsOptions = {
   isDevelopment: process.env.NODE_ENV === 'development',
   transformUnknownErrors: true,
-  transform: {
+  transformers: {
     // Catch JsonWebTokenError and turn them into HttpErrors
-    JsonWebTokenError: (err: Error) =>
-      new HttpError(401, err.message, err),
+    JsonWebTokenError: (err: Error) => new HttpError(401, err.message, err),
   },
 };
 
 /**
  * Should be one of the last middlewares
  */
-app.use(
-  handleErrors(options),
-);
+app.use(handleErrors(options));
 
 app.listen(8000);
 ```
