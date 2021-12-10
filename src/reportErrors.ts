@@ -17,6 +17,7 @@ export default function reportErrors(
     }
 
     const message = createErrorResponse(err, isDevelopment);
+    res.set('content-type', 'application/problem+json');
 
     return res.status(err.status).json({
       error: message,

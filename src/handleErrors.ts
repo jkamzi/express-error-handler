@@ -9,11 +9,15 @@ export type HandleErrorsOptions = {
   transformUnknownErrors: boolean;
 };
 
+const defaultOptions = {
+  isDevelopment: false,
+  transformUnknownErrors: true,
+  transformers: {},
+};
+
 export default function handleErrors(
-  options: HandleErrorsOptions = {
-    isDevelopment: false,
-    transformUnknownErrors: true,
-    transformers: {},
+  options: Partial<HandleErrorsOptions> = {
+    ...defaultOptions,
   },
 ): ErrorRequestHandler[] {
   return [

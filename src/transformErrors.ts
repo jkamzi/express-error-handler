@@ -1,9 +1,10 @@
 import { ErrorRequestHandler, NextFunction, Request, Response } from 'express';
+import { isHttpError } from '.';
 import HttpError from './errors/HttpError';
 import InternalServerError from './errors/InternalServerError';
 
 export type ErrorTransformer = {
-  [key: string]: (err: Error) => HttpError;
+  [key: string]: (err: Error) => HttpError | Error;
 };
 
 function addCatchAll(defaultTransformers: ErrorTransformer): ErrorTransformer {
@@ -29,6 +30,13 @@ export default function transformErrors(
     next: NextFunction,
   ): void => {
     const keys = Object.keys(defaultTransformers);
+    /**
+     * @fix for: Should not catch HttpErrors
+     */
+    if (isHttpError(err)) {
+      return next(err);
+    }
+
     if (keys.includes(err.name)) {
       return next(defaultTransformers[err.name](err));
     }

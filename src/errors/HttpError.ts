@@ -9,9 +9,7 @@ export default class HttpError extends Error {
     super(message);
     this.status = status;
     this.previous = previous;
-
-    if (typeof this.name === 'undefined' || this.name === 'Error') {
-      this.name = this.constructor.name;
-    }
+    this.name = new.target.name;
+    Object.setPrototypeOf(this, new.target.prototype);
   }
 }

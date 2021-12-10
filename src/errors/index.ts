@@ -1,5 +1,6 @@
 import HttpError from './HttpError';
-import InternalServerError from './InternalServerError';
+import UnauthorizedError from './UnauthorizedError';
 import NotFoundError from './NotFoundError';
+import InternalServerError from './InternalServerError';
 
-export { HttpError, InternalServerError, NotFoundError };
+export { HttpError, UnauthorizedError, InternalServerError, NotFoundError };
