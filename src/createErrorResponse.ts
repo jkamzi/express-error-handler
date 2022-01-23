@@ -1,9 +1,3 @@
-/**
- * Copyright (c) Rikard Jansson
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
 import HttpError from './errors/HttpError';
 
 export type PreviousErrorBody = {
@@ -34,11 +28,11 @@ export default function createErrorResponse(
   err: HttpError,
   isDevelopment = false,
 ): JsonErrorResponse | JsonErrorDevelopmentResponse {
-  if (isDevelopment) {
-    return {
-      message: err.message,
-      status: err.status,
-      type: err.name,
+  return {
+    message: err.message,
+    status: err.status,
+    type: err.name,
+    ...(isDevelopment && {
       stack: err.stack,
       ...(err.previous && {
         previous: {
@@ -46,12 +40,6 @@ export default function createErrorResponse(
           stack: err.previous?.stack,
         },
       }),
-    };
-  }
-
-  return {
-    message: err.message,
-    status: err.status,
-    type: err.name,
+    }),
   };
 }

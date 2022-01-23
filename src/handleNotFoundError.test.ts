@@ -1,8 +1,5 @@
 import { Request, Response } from 'express';
-import {
-  JsonErrorDevelopmentResponse,
-  JsonErrorResponse,
-} from './createErrorResponse';
+import { JsonErrorResponse } from './createErrorResponse';
 import { NotFoundError } from './errors';
 import handleNotFoundError from './handleNotFoundError';
 

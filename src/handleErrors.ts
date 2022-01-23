@@ -15,6 +15,11 @@ const defaultOptions = {
   transformers: {},
 };
 
+/**
+ *
+ * @param options
+ * @returns
+ */
 export default function handleErrors(
   options: Partial<HandleErrorsOptions> = {
     ...defaultOptions,

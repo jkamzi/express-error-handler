@@ -1,7 +1,7 @@
 import { isHttpError } from '.';
 import HttpError from './errors/HttpError';
 
-function errorAsUnkown(): unknown {
+function errorAsUnknown(): unknown {
   const err = new HttpError(400, 'Bad Request') as unknown;
 
   return err;
@@ -13,6 +13,6 @@ describe('isHttpError', () => {
    * so this test should pass
    */
   it('Should return true when error is HttpError', () => {
-    expect(isHttpError(errorAsUnkown())).toEqual(true);
+    expect(isHttpError(errorAsUnknown())).toEqual(true);
   });
 });

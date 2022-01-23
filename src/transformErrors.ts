@@ -30,9 +30,6 @@ export default function transformErrors(
     next: NextFunction,
   ): void => {
     const keys = Object.keys(defaultTransformers);
-    /**
-     * @fix for: Should not catch HttpErrors
-     */
     if (isHttpError(err)) {
       return next(err);
     }
